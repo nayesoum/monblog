@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article index{% endblock %}
+
+{% block body %}
+    <h1>Article index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <td>{{ article.id }}</td>
+                <td>{{ article.title }}</td>
+                <td>{{ article.Content }}</td>
+                <td>{{ article.image }}</td>
+                <td>{{ article.category }}</td>
+                <td>
+                    <a href="{{ path('app_article_show', {'id': article.id}) }}">Voir</a>
+                    
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="row ">   
+        <div class="col">
+                <div class="card">
+                    {% for article in articles %}
+                        <img src="{{ article.image }}" class="card-img-top w-25" alt="image de la categorie">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ article.title }}</h5>
+                            <p class="card-text">{{ article.id }}</p>
+                            <p class="card-text">{{ article.category }}</p>
+                            <p class="card-text">{{ article.Content }}. This content is a little bit longer.</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            
+        </div>
+    </div>
+{% endblock %}
