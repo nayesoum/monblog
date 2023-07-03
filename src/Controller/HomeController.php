@@ -17,18 +17,18 @@ class HomeController extends AbstractController
 
         return $this->render('home/home.html.twig', [
             'controller_name' => 'HomeController',
-            'articles' => $articleRepository->findAll(),
+            // 'articles' => $articleRepository->findAll(),
         ]);
     }
 
-    #[Route('/', name: 'app_article_show', methods: ['GET'])]
-    public function show(Article $articles): Response
-    {
-        $category = $articles->getCategory();
-        $articles = $category->articles();
-        return $this->render('article/show.html.twig', [
-            'articles' => $articles,
-            'category' => $category
-        ]);
-    }    
+    // #[Route('/', name: 'app_article_show', methods: ['GET'])]
+    // public function show(Article $articles): Response
+    // {
+    //     $category = $articles->getCategory();
+    //     $articles = $category->articles();
+    //     return $this->render('article/show.html.twig', [
+    //         'articles' => $articles,
+    //         'category' => $category
+    //     ]);
+    // }    
 }
