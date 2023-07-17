@@ -5,30 +5,35 @@
 {% block body %}
     <h1>Article</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ article.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ article.title }}</td>
-            </tr>
-            <tr>
-                <th>Content</th>
-                <td>{{ article.Content }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td>{{ article.image }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{ article.image }}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ article.title }}</h5>
+        <p class="card-text"> Article n {{ article.id }}</p>
+        <p class="card-text"><small class="text-muted">{{ article.Content }}</small></p>
+        <p class="card-text"><small class="text-muted">{{ article.Category }}</small></p>
+       
+      </div>
+    </div>
+  </div>
+</div>
 
-    <a href="{{ path('app_admin_article_index') }}">back to list</a>
+<div class="card mb-3">
+  <img src="{{ article.image }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ article.title }}</h5>
+    <p class="card-text"><small class="text-muted">{{ article.Category }}</small></p>
+    <p class="card-text">{{ article.Content }}</p>
+   
+  </div>
+</div>
+    <a href="{{ path('app_admin_article_index') }}">Retour à la liste d'article</a>
 
-    <a href="{{ path('app_admin_article_edit', {'id': article.id}) }}">edit</a>
+    <a href="{{ path('app_admin_article_edit', {'id': article.id}) }}"><i class="bi bi-pencil-fill"></i></a>
 
     {{ include('admin_article/_delete_form.html.twig') }}
 {% endblock %}

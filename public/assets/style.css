@@ -1,0 +1,17 @@
+#main{
+    width: 150px;
+}
+body{
+    background-color: gainsboro;
+}
+
+li{
+    text-decoration: none;
+    list-style: none;
+    width: 10rem;
+
+}
+a{
+    text-decoration: none;
+    list-style: none;
+}

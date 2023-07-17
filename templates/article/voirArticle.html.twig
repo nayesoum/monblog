@@ -1,77 +1,52 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Les articles de mode{% endblock %}
+{% block title %}Les articles de mode
+{% endblock %}
 
 {% block body %}
-    <h1>Article</h1>
+	<div class="container">
+		<h1>{{ article.title }}</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ article.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ article.title }}</td>
-            </tr>
-            <tr>
-                <th>Content</th>
-                <td>{{ article.Content }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td>{{ article.image }}</td>
-            </tr>
-             <tr>
-                <th>categorie</th>
-                <td>{{ article.category }}</td>
-            </tr>
-        </tbody>
-    </table>
+		<div class="row">
+			<div class="col sm-6">
+				<div class="card mb-3">
+					<img src="{{ article.image }}" class="card-img-top w-25" alt="image de l'article">
+					<div class="card-body">
+						<h5 class="card-title">{{ article.title }}</h5>
+						<p class="card-text">{{ article.category }}</p>
+						<p class="card-text">{{ article.content }}</p>
+					</div>
+				</div>
+				<button type="button" class="btn btn-outline-dark">
+						 <a href="{{ path('app_article_index') }}">Voir tous les articles</a>
+				</button>
+               
+			</div>
+			
 
-    <a href="{{ path('app_article_index') }}">Voir tous les articles</a>
-<div>
-{# ici je recupere l'id de larticle et je le passe dans le lien  #}
-<a href="{{ path('app_comment_new',{'id': article.id}) }}"> Ajouter un commentaire</a>
-</div>
-   <div>
-   {% for comment in comments %}
 
-<div> {{ comment.user.pseudo }} a dit:  </div>
-<div> {{ comment.content }}  </div>
-   {% endfor %}
-   </div>
+			<div class="col sm-6">
+				<div class="card border-secondary mb-3" style="max-width: 35rem;">
+					<div class="card-header">Commentaire</div>
+					<div class="card-body text-secondary">
+						{% for comment in comments %}
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item">{{ comment.user.pseudo }}
+									a dit:
+									{{ comment.content }}</li>
+							</ul>
+						{% endfor %}
+					</div>
+					{# ici je recupere l'id de larticle et je le passe dans le lien  #}
+					<button type="button" class="btn btn-outline-dark">
+						<a href="{{ path('app_comment_new',{'id': article.id}) }}">
+							Ajouter un commentaire
+						</a>
+					</button>
+					
 
-   <div class="row row-cols-1 row-cols-md-2 g-4">
-  
-    <div class="col">
-        <div class="card">
-            <img src="{{ article.image }}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">{{ article.title }}</h5>
-                <p class="card-text">{{ article.id }}</p>
-                <p class="{{ article.category }}</p>
-                <p class="card-text">{{ article.content }}</p>
-            </div>
-        </div>
-    </div>
-    <a href="{{ path('app_article_index') }}">Voir tous les articles</a>
-</div>
-
-{# ici je recupere l'id de larticle et je le passe dans le lien  #}
-<a href="{{ path('app_comment_new',{'id': article.id}) }}"> Ajouter un commentaire</a>
-
-<div class="card border-secondary mb-3" style="max-width: 18rem;">
-    <div class="card-header">Commentaire</div>
-        <div class="card-body text-secondary">
-            {% for comment in comments %}
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{{ comment.user.pseudo }} a dit:</li>
-                    <li class="list-group-item">{{ comment.content }}</li>
-                </ul>
-            {% endfor %}
-        </div>        
-    </div>
-</div>
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}

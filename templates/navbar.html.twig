@@ -1,51 +1,101 @@
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="{{ path('app_home')}}">mon blog de mode</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{ path('app_home')}}">Accueil</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ path('app_article_index')}}">Articles</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ path('app_category_index')}}">Categorie</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="{{ path('app_home')}}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            la partie admin
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="{{ path('app_admin_article_index')}}">Articles</a></li>
-            <li><a class="dropdown-item" href="{{ path('app_admin_category_index')}}">Categorie</a></li>
-            <li><a class="dropdown-item" href="{{ path('app_admin_comment_index')}}">Commentaire</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="{{ path('app_home')}}">Les utilisateurs</a></li>
-          </ul>
-        </li>
-         {# <li class="nav-item">
-         <!-- ici c'est l'enregistrement d'un nouvel utilisateur est le controller register-->
-          <a class="nav-link" href="{{ path('app_register')}}">Inscription</a>
-        </li>
-     <li class="nav-item">
-     <!-- ici le login donc l'inscription est dans le securityController dans le login-->
-          <a class="nav-link" href="{{ path('app_login')}}">Identification</a>
-        </li> #}
-      </ul>
-      <div class=" d-flex justify-content-around" style="min-width: 100px;">
-                    <div class="rounded-circle bg-info text-white d-flex align-items-center justify-content-center widget_header">
-                        <i class="bi-person-fill"><a class="nav-link" href="{{ path('app_login')}}">Identification</a></i>
-                    </div>
-                    <div class="rounded-circle bg-info text-white d-flex align-items-center justify-content-center widget_header">
-                        <button><a class="nav-link" href="{{ path('app_register')}}">Inscription</a></boutton>
-                    </div>
-                </div>
+{# 
 
-    
+<nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="{{ path('app_home')}}">mon blog de mode</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="{{ path('app_home')}}">Accueil</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('app_article_index')}}">Articles</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('app_category_index')}}">Categorie</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="{{ path('app_home')}}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						la partie admin
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<li>
+							<a class="dropdown-item" href="{{ path('app_admin_article_index')}}">Articles</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="{{ path('app_admin_category_index')}}">Categorie</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="{{ path('app_admin_comment_index')}}">Commentaire</a>
+						</li>
+						<li><hr class="dropdown-divider"></li>
+						<li>
+							<a class="dropdown-item" href="{{ path('app_home')}}">Les utilisateurs</a>
+						</li>
+					</ul>
+				</li>
+				{# <li class="nav-item">
+				          <!-- ici c'est l'enregistrement d'un nouvel utilisateur est le controller register-->
+				            <a class="nav-link" href="{{ path('app_register')}}">Inscription</a>
+				          </li>
+				      <li class="nav-item">
+				      <!-- ici le login donc l'inscription est dans le securityController dans le login-->
+				            <a class="nav-link" href="{{ path('app_login')}}">Identification</a>
+				          </li> #}
+		{#	</ul>
+			<div class=" d-flex justify-content-around" style="min-width: 100px;">
+				<div class="rounded-circle bg-info text-white d-flex align-items-center justify-content-center widget_header">
+					<i class="bi-person-fill">
+						<a class="nav-link" href="{{ path('app_login')}}">Identification</a>
+					</i>
+				</div>
+				<div class="rounded-circle bg-info text-white d-flex align-items-center justify-content-center widget_header">
+					<button>
+						<a class="nav-link" href="{{ path('app_register')}}">Inscription</a>
+					</boutton>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+</nav> #}
+
+
+<header class="p-3 mb-3 border-bottom bg-dark">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="{{ path('app_home')}}" class="nav-link px-2 link-secondary text-light">Home</a></li>
+          <li><a href="{{ path('app_article_index')}}" class="nav-link px-2 link-light"> Les Articles</a></li>
+          <li><a href="{{ path('app_category_index')}}" class="nav-link px-2 link-light">Les categories</a></li>
+		  <li> <button><a class="nav-link" href="{{ path('app_login')}}">Identification</a></button></li>
+          <li> <button><a class="nav-link" href="{{ path('app_register')}}">Inscription</a></button></li>
+        </ul>
+	
+        <div class="dropdown text-end">
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+          </a>
+          <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
+            <li>Ma partie admin</li>
+			<li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{{ path('app_admin_article_index')}}">Les articles</a></li>
+            <li><a class="dropdown-item" href="{{ path('app_admin_comment_index')}}">Mes commentaires</a></li>
+            <li><a class="dropdown-item" href="{{ path('app_admin_category_index')}}">Les categories</a></li>
+			<li><a class="dropdown-item" href="{{ path('app_admin_user_index')}}">Les utilisateurs</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{{ path('app_logout') }}">Sign out</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
-</nav>
+  </header>
+  
