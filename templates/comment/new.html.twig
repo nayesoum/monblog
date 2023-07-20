@@ -1,11 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Comment{% endblock %}
+{% block title %}New Comment
+{% endblock %}
 
 {% block body %}
-    <h1>Create new Comment</h1>
 
-    {{ include('comment/_form.html.twig') }}
+	<div class="container">
+		<div class="p-5 mb-4 bg-light rounded-3">
+			<div class="container-fluid py-5">
+				<h1 class="display-5 fw-bold">Creer un nouveau Commentaire
+				</h1>
+				<p class="col-md-8 fs-4">c'est passionnant tous cela je peux créer mon commentaire que vais-je écrire 🤔.</p>
 
-    
+			</div>
+		</div>
+		<div class="mb-4">
+			<button type="button" class="btn btn-outline-dark">
+				<a href="{{ path('app_admin_category_new') }}">Creer une nouvelle categorie</a>
+			</button>
+		</div>
+
+		<div class="card mb-5" style="width: 18rem;">
+
+			{{ include('comment/_form.html.twig') }}
+		</div>
+	</div>
 {% endblock %}

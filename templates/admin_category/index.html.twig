@@ -3,14 +3,28 @@
 {% block title %}Category index{% endblock %}
 
 {% block body %}
-    <h1>Category index</h1>
 
-    <table class="table">
+<div class="container">
+    <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Mes categories </h1>
+            <p class="col-md-8 fs-4">Pour voir toutes les catégories, les modifier et ou en créer de nouvelle.</p>
+        
+        </div>
+    </div>
+
+
+    <div class="mb-4">
+        <button type="button" class="btn btn-outline-dark">
+            <a href="{{ path('app_admin_category_new') }}">Creer une nouvelle categorie</a>
+        </button>
+    </div>
+    <table class="table table-dark table-hover">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>actions</th>
+                <th>Nom de la catégorie</th>
+                <th>Les possibilités</th>
             </tr>
         </thead>
         <tbody>
@@ -21,11 +35,11 @@
                 <td>
 
                       <button type="button" class="btn btn-outline-dark">
-                        <a href="{{ path('app_admin_category_show', {'id': category.id}) }}">voir</a>
+                        <a href="{{ path('app_admin_category_show', {'id': category.id}) }}" class="text-light">voir</a>
                       </button>
 
                     <button type="button" class="btn btn-outline-dark">
-                        <a href="{{ path('app_admin_category_edit', {'id': category.id}) }}">modifier</a>
+                        <a href="{{ path('app_admin_category_edit', {'id': category.id}) }} " class="text-light">modifier</a>
                     </button>
                     
                     
@@ -38,8 +52,6 @@
         {% endfor %}
         </tbody>
     </table>
-      <button type="button" class="btn btn-outline-dark">
-        <a href="{{ path('app_admin_category_new') }}">Creer une nouvelle categorie</a>
-      </button>
-    
+     
+</div>    
 {% endblock %}

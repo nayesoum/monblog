@@ -1,39 +1,45 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Category index{% endblock %}
+{% block title %}Category index
+{% endblock %}
 
 {% block body %}
-    <h1>Category index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for category in categories %}
-            <tr>
-                <td>{{ category.id }}</td>
-                <td>{{ category.name }}</td>
-                <td>
-                <button type="button" class="btn btn-outline-dark">
-                    <a href="{{ path('app_category_show', {'id': category.id}) }}">voir</a>
-                </button>
 
-                    
-                    
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+	<div class="container ">
 
-    
+		<div class="p-5 mb-4 bg-light rounded-3">
+			<div class="container-fluid py-5">
+				<h1 class="display-5 fw-bold">Les catégories
+				</h1>
+				<p class="col-md-8 fs-4">Pour voir toutes les catégories.</p>
+
+			</div>
+		</div>
+		<div class="card">
+			<table class="table table-dark table-hover">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Nom de la catégorie</th>
+						<th>Possibilité</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for category in categories %}
+						<tr>
+							<td>{{ category.id }}</td>
+							<td>{{ category.name }}</td>
+							<td>
+								<button type="button" class="btn btn-outline-dark">
+									<a href="{{ path('app_category_show', {'id': category.id}) }}" class="text-light">voir</a>
+								</button>
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+
 {% endblock %}

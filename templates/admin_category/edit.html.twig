@@ -1,16 +1,25 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Category{% endblock %}
+{% block title %}Edit Category
+{% endblock %}
 
 {% block body %}
-    <h1>Edit Category</h1>
 
-    {{ include('admin_category/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <button type="button" class="btn btn-outline-dark">
-        <a href="{{ path('app_admin_category_index') }}">retour a la liste des categorie</a>    
-    </button>
-        
-
-    {{ include('admin_category/_delete_form.html.twig') }}
+	<div class="container ">
+		<div class="p-5 mb-4 bg-light rounded-3">
+			<div class="container-fluid ">
+				<h1 class="text-center mt-5 mb-5">Modifier la catégorie d'article
+					{{ category.name }}</h1>
+			</div>
+		</div>
+		<div class=" card mb-5" style="18rem">
+			{{ include('admin_category/_form.html.twig', {'button_label': 'Update'}) }}
+            <div class="mb-2">
+                <button type="button" class="btn btn-outline-dark">
+                    <a href="{{ path('app_admin_category_index') }}">retour a la liste des categorie</a>
+                </button>
+            </div>
+        </div>
+			{{ include('admin_category/_delete_form.html.twig') }}
+	</div>
 {% endblock %}

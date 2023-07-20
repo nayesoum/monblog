@@ -33,9 +33,9 @@ class RegistrationController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $user->setPseudo(
-                $form->get('pseudo')->getData()
-            );
+            // $user->setPseudo(
+            //     $form->get('pseudo')->getData()
+            // );
             // encode the plain password
             $user->setPassword(
                 $userPasswordHasher->hashPassword(
@@ -52,7 +52,6 @@ class RegistrationController extends AbstractController
                 (new TemplatedEmail())
                     ->from(new Address('no-reply-email@blogmode.fr', 'blog mode no reply'))
                     ->to($user->getEmail())
-                    ->to($user->getPseudo())
                     ->subject('Please Confirm your Email')
                     ->htmlTemplate('registration/confirmation_email.html.twig')
             );

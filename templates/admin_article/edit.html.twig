@@ -3,11 +3,14 @@
 {% block title %}Edit Article{% endblock %}
 
 {% block body %}
-    <h1>Editer l'article</h1>
+    <h1>modifier l'article</h1>
 
     {{ include('admin_article/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('app_admin_article_index') }}">Retour a la liste d'article</a>
+    <button type="button" class="btn btn-outline-dark">
+        <a href="{{ path('app_admin_article_index') }}">Retour a la liste d'article</a>
+    </button>
+    
 
     {{ include('admin_article/_delete_form.html.twig') }}
 {% endblock %}

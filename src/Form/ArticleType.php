@@ -4,8 +4,11 @@ namespace App\Form;
 
 use App\Entity\Article;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\File;
 
 class ArticleType extends AbstractType
 {
@@ -14,7 +17,18 @@ class ArticleType extends AbstractType
         $builder
             ->add('title')
             ->add('Content')
-            ->add('image')
+             ->add('image', 
+             //FileType::class,
+            // [
+            //     'mapped' => false,
+            //     'constraints' => [
+            //         new File([
+            //             'maxSize' => '2000k',
+            //         ])
+            //     ],
+            // ]
+            )
+
             ->add('user')
             ->add('category')
         ;

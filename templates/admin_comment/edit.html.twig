@@ -1,13 +1,32 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Comment{% endblock %}
+{% block title %}Edit Comment
+{% endblock %}
 
 {% block body %}
-    <h1>Edit Comment</h1>
 
-    {{ include('admin_comment/_form.html.twig', {'button_label': 'Update'}) }}
+	<div class="container">
+		<div class="p-5 mb-4 bg-light rounded-3">
+			<div class="container-fluid py-5">
+				<h1 class="display-5 fw-bold">Mes commentaire 
+				</h1>
+				<p class="col-md-8 fs-4">Pour voir tous les commentaire, les modifier et ou en créer de nouveaux.</p>
 
-    <a href="{{ path('app_admin_comment_index') }}">retour a la liste de commentaire</a>
+			</div>
+		</div>
 
-    {{ include('admin_comment/_delete_form.html.twig') }}
+
+		<div class="mb-4">
+			<button type="button" class="btn btn-outline-dark">
+				<a href="{{ path('app_admin_category_new') }}">Creer une nouvelle categorie</a>
+			</button>
+		</div>
+
+		{{ include('admin_comment/_form.html.twig', {'button_label': 'Update'}) }}
+
+		<a href="{{ path('app_admin_comment_index') }}">retour a la liste de commentaire</a>
+
+		{{ include('admin_comment/_delete_form.html.twig') }}
+
+	</div>
 {% endblock %}

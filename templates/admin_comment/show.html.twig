@@ -1,30 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Comment{% endblock %}
+{% block title %}Comment
+{% endblock %}
 
 {% block body %}
-    <h1>Commentaire</h1>
 
-    <table class="table">
-        <tbody>
-       
-            <tr>
-                <th>Content</th>
-                <td>{{ comment.content }}</td>
-            </tr>
-            <tr>
-                <th>Crée le </th>
-                <td>{{ comment.createdAt ? comment.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
-        <button type="button" class="btn btn-outline-dark">
-            <a href="{{ path('app_admin_comment_index') }}">retour a la liste de commentaire</a>        
-        </button>
 
-        <button type="button" class="btn btn-outline-dark"> 
-            <a href="{{ path('app_admin_comment_edit', {'id': comment.id}) }}">modifier</a>
-        </button>
+<div class="container ">
 
-    {{ include('admin_comment/_delete_form.html.twig') }}
+		<div class="p-5 mb-4 bg-light rounded-3">
+			<div class="container-fluid py-5">
+				<h1 class="display-5 fw-bold">Mes commentaires
+				</h1>
+				<p class="col-md-8 fs-4">Pour voir toutes les commentaires.</p>
+
+			</div>
+		</div>
+	<div class="card" style="width: 18rem;">
+		
+		<div class="card-body">
+			
+			<p class="card-text"> crée le :{{ comment.createdAt ? comment.createdAt|date('Y-m-d H:i:s') : '' }}</p>
+			<p class="card-text">commentaire :{{ comment.content }}</p>
+			
+			
+	<button type="button" class="btn btn-outline-dark">
+		<a href="{{ path('app_admin_comment_index') }}">retour a la liste de commentaire</a>
+	</button>
+            <button type="button" class="btn btn-outline-dark">
+		<a href="{{ path('app_admin_comment_edit', {'id': comment.id}) }}">modifier</a>
+	</button>
+    	{{ include('admin_comment/_delete_form.html.twig') }}
+		</div>
+	</div>
+
+</div>    
 {% endblock %}
