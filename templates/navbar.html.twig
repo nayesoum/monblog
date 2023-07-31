@@ -65,34 +65,31 @@
 </nav> #}
 
 
-<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom bg-dark">
+<header class="p-3 mb-3 border-bottom bg-dark">
     <div class="container">
-      <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-      </a>
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start px-5">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+        </a>
 
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="{{ path('app_home')}}" class="nav-link px-2 link-secondary text-light">Home</a></li>
           <li><a href="{{ path('app_article_index')}}" class="nav-link px-2 link-light"> Les Articles</a></li>
           <li><a href="{{ path('app_category_index')}}" class="nav-link px-2 link-light">Les categories</a></li>
-		 {% if  not app.user %}col-md-3 text-end
-		 <div class="col-md-3 text-end">
-        <button type="button" class="btn btn-outline-primary me-2"><a class="nav-link text-light" href="{{ path('app_login')}}" >S'identifier</a></button>
-        <button type="button" class="btn btn-primary"><a class="nav-link text-light" href="{{ path('app_register')}}" >S'inscrire</a></button>
-      </div>
-		  {# <li> <button><a class="nav-link" href="{{ path('app_login')}}">Identification</a></button></li>
-          <li> <button><a class="nav-link" href="{{ path('app_register')}}">Inscription</a></button></li> #}
+		 {% if  not app.user %}
+		  <li> <button><a class="nav-link" href="{{ path('app_login')}}">Identification</a></button></li>
+          <li> <button><a class="nav-link" href="{{ path('app_register')}}">Inscription</a></button></li>
 		 {% endif %}
 		 
         </ul>
 		 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-			<div class="dropdown text-end pb-5">
+			<div class="dropdown text-end">
 			
 			<a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
 				<img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
 			</a>
 			
-				<ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
+				<ul class="dropdown-menu text-small px-3" aria-labelledby="dropdownUser1" style="">
 					<li>Ma partie admin</li>
 					<li><hr class="dropdown-divider"></li>
 					<li><a class="dropdown-item" href="{{ path('app_admin_article_index')}}">Les articles</a></li>
@@ -100,7 +97,7 @@
 					<li><a class="dropdown-item" href="{{ path('app_admin_category_index')}}">Les categories</a></li>
 					<li><a class="dropdown-item" href="{{ path('app_admin_user_index')}}">Les utilisateurs</a></li>
 					<li><hr class="dropdown-divider"></li>
-					<li><a class="dropdown-item" href="{{ path('app_logout') }}">Sign out</a></li>
+					<li><a class="dropdown-item" href="{{ path('app_logout') }}">Se déconnecter</a></li>
 				</ul>
 		  
         	</div>

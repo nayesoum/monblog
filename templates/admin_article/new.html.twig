@@ -1,11 +1,48 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Article{% endblock %}
+{% block title %}New Article
+{% endblock %}
 
 {% block body %}
-    <h1>Creer un nouvel Article</h1>
+	{# <div class="container">
+			    <div class="card" style="width: 40rem;"> 
+			        <h1 class="mt-5 mb-4 d-flex justify-content-center">Creer un nouvel Article</h1>
+			
+			            <div class="mx-4"> 
+			                 {{ include('admin_article/_form.html.twig') }}
+			            </div> 
+			       
+			            <button type="button" class="btn btn-outline-dark">
+			                   <a href="{{ path('app_admin_article_index') }}">Retour à la liste d'article</a>
+			            </button>
+			        
+			    </div>
+			 </div>  #}
+	<div class="container ">
+		<div class="p-5 mb-4 bg-light d-flex justify-content-center rounded-3">
+			<div class="container-fluid py-5">
+				<h1 class="display-5 fw-bold">Les utilisateur
+				</h1>
+				<p class=" fs-4 ">Pour créer un nouvel article un article doit avoir une personnalité quelque chose qui lui est propre une marque de fabrique.
+					<br>
+					Tu dois toujours inclure titre une image une description et une catégorie.<br>Alors montre nous de quoi tu est capable.</p>
 
-    {{ include('admin_article/_form.html.twig') }}
+				<div class="mx-4 ">
+					<button type="button" class="btn btn-outline-dark">
+						<a href="{{ path('app_admin_article_index') }}">Retour à la liste d'article</a>
+					</button>
+				</div>
+			</div>
 
-    <a href="{{ path('app_admin_article_index') }}">Retour à la liste d'article</a>
+			<div class="card Regular shadow" style="width: 50rem;">
+				<h1 class="mt-5 mb-4 d-flex justify-content-center">Creer un article</h1>
+
+				<div class="mx-4 ">
+					{{ include('admin_article/_form.html.twig') }}
+				</div>
+
+			</div>
+		</div>
+	</div>
+
 {% endblock %}

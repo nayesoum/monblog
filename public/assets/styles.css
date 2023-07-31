@@ -1,0 +1,24 @@
+
+/* body{
+    /* background-image: url('https://images.pexels.com/photos/1884583/pexels-photo-1884583.jpeg?auto=compress&cs=tinysrgb&w=1200');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: black;
+}  */
+
+body{
+    background-color: black;
+}
+
+
+li{
+    text-decoration: none;
+    list-style: none;
+    width: 10rem;
+
+}
+a{
+    text-decoration: none;
+    list-style: none;
+}

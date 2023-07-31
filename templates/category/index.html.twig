@@ -6,7 +6,7 @@
 {% block body %}
 
 
-	<div class="container ">
+	<div class="container mb-5">
 
 		<div class="p-5 mb-4 bg-light rounded-3">
 			<div class="container-fluid py-5">
@@ -31,7 +31,7 @@
 							<td>{{ category.id }}</td>
 							<td>{{ category.name }}</td>
 							<td>
-								<button type="button" class="btn btn-outline-dark">
+								<button type="button" class="btn btn-outline-dark ">
 									<a href="{{ path('app_category_show', {'id': category.id}) }}" class="text-light">voir</a>
 								</button>
 							</td>

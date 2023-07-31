@@ -13,28 +13,31 @@
 			<p> On suit la mode pour signaler son appartenance à un groupe social, un groupe de pensée, une forme d’esthétisme, pour se distinguer des autres ; donc pour signaler son originalité, ses refus, ses rejets sociaux, politiques… La mode rassemble et rassure. Mais on peut aussi être à la mode par conformisme.</p>
 		</div>
 	</div>
-
-	<div class="row row-cols-1 row-cols-md-2 g-4 ">
+<div class="row row-cols-1 row-cols-md-3 g-4 ">
 		{% if articles|length  > 0 %}
+		
 			{% for article in articles %}
-				<div class="card">
-					<img src="{{ article.image }}" class="card-img-top img-fluid" style="width: 15rem;" alt="image de la categorie">
-					<div class="card-body">
-						<h5 class="card-title">{{ article.title }}</h5>
-						<p class="card-text">{{ article.category }}</p>
-						<p class="card-text">{{ article.Content }}</p>
-							<button type="button" class="btn btn-outline-dark">
-								<a href="{{ path('app_article_show', {'id': article.id}) }}">Voir</a>
-							</button>
-						
+				<div class="col">
+					<div class="card">
+						<img src="{{ article.image }}" class="card-img-top img-fluid w-100" style="width: 15rem;" alt="image de la categorie">
+						<div class="card-body">
+							<h5 class="card-title">{{ article.title }}</h5>
+							<p class="card-text">{{ article.category }}</p>
+							<p class="card-text">{{ article.Content }}</p>
+								<button type="button" class="btn btn-outline-dark">
+									<a href="{{ path('app_article_show', {'id': article.id}) }}">Voir</a>
+								</button>
+							
+						</div>
 					</div>
-				</div>
-			{% endfor %}
+				</div>	
+			{% endfor %}	
 			{% else %}
 			<p> desolé aucun article </p>
 				
 		{% endif %}
 	</div>
 
+	
 <div
 {% endblock %}

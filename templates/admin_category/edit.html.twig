@@ -4,22 +4,59 @@
 {% endblock %}
 
 {% block body %}
-
-	<div class="container ">
+{# 
+	<div class="container style=" width: 18rem;" ">
 		<div class="p-5 mb-4 bg-light rounded-3">
 			<div class="container-fluid ">
 				<h1 class="text-center mt-5 mb-5">Modifier la catégorie d'article
 					{{ category.name }}</h1>
 			</div>
 		</div>
-		<div class=" card mb-5" style="18rem">
-			{{ include('admin_category/_form.html.twig', {'button_label': 'Update'}) }}
-            <div class="mb-2">
-                <button type="button" class="btn btn-outline-dark">
-                    <a href="{{ path('app_admin_category_index') }}">retour a la liste des categorie</a>
-                </button>
-            </div>
-        </div>
+
+		<div class=" card mb-5" style="width: 40rem;">
+			<div class="mt-3 mb-4">
+				{{ include('admin_category/_form.html.twig', {'button_label': 'Update'}) }}
+			</div>
+			<div class="mb-2">
+				<button type="button" class="btn btn-outline-dark">
+					<a href="{{ path('app_admin_category_index') }}">retour a la liste des categorie</a>
+				</button>
+			</div>
+		</div>
+		<div class="mt-3 mb-4">
 			{{ include('admin_category/_delete_form.html.twig') }}
+		</div>
+	</div> #}
+
+	<div class="container ">
+		<div class="p-5 mb-4 bg-light d-flex justify-content-center rounded-3">
+			<div class="container-fluid py-5">
+				<h1 class="display-5 fw-bold">Les utilisateur
+				</h1>
+				<p class=" fs-4 ">Pour créer une catégorie doit avoir une personnalité quelque chose qui lui est propre.
+					<br>
+					Le titre doit bien décrire la catégorie.<br>Alors montre nous de quoi tu est capable.</p>
+
+				<div class="mx-4 ">
+					<button type="button" class="btn btn-outline-dark">
+						<a href="{{ path('app_admin_category_index') }}">retour à la liste des categories</a>
+					</button>
+				</div>
+			</div>
+
+			<div class="card px-3 Regular shadow" style="width: 50rem;">
+				<h3 class="text-center mt-5 mb-5">Modifier la catégorie d'article
+					{{ category.name }}</h3>
+
+				<div class="mt-3 mb-4">
+					{{ include('admin_category/_form.html.twig', {'button_label': 'Update'}) }}
+				</div>
+				<div class="mt-3 mb-4">
+					{{ include('admin_category/_delete_form.html.twig') }}
+				</div>
+
+			</div>
+		</div>
 	</div>
+
 {% endblock %}
