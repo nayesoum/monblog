@@ -5,44 +5,44 @@
 
 {% block body %}
 	{# <h1>Comment index</h1>
-	<div>
-
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Contenue</th>
-					<th>Crée le
-					</th>
-					<th>possibilité</th>
-				</tr>
-			</thead>
-			<tbody>
-				{% for comment in comments %}
+		<div>
+	
+			<table class="table">
+				<thead>
 					<tr>
-						<td>{{ comment.content }}</td>
-						<td>{{ comment.createdAt ? comment.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-						<td>
-							<button type="button" class="btn btn-outline-dark">
-								<a href="{{ path('app_admin_comment_show', {'id': comment.id}) }}">voir</a>
-							</button>
-
-							<button type="button" class="btn btn-outline-dark">
-								<a href="{{ path('app_admin_comment_edit', {'id': comment.id}) }}">modifier</a>
-							</button>
-
-
-						</td>
+						<th>Contenue</th>
+						<th>Crée le
+						</th>
+						<th>possibilité</th>
 					</tr>
-				{% else %}
-					<tr>
-						<td colspan="4">no records found</td>
-					</tr>
-				{% endfor %}
-			</tbody>
-		</table>
-
-
-	</div> #}
+				</thead>
+				<tbody>
+					{% for comment in comments %}
+						<tr>
+							<td>{{ comment.content }}</td>
+							<td>{{ comment.createdAt ? comment.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+							<td>
+								<button type="button" class="btn btn-outline-dark">
+									<a href="{{ path('app_admin_comment_show', {'id': comment.id}) }}">voir</a>
+								</button>
+	
+								<button type="button" class="btn btn-outline-dark">
+									<a href="{{ path('app_admin_comment_edit', {'id': comment.id}) }}">modifier</a>
+								</button>
+	
+	
+							</td>
+						</tr>
+					{% else %}
+						<tr>
+							<td colspan="4">no records found</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+	
+	
+		</div> #}
 
 
 	<div class="container">
@@ -59,40 +59,41 @@
 				<a href="{{ path('app_admin_comment_new') }}">Creer un nouveau commentaire</a>
 			</button>
 		</div>
-		<table class="table table-dark table-hover">
-			<thead>
-				<tr>
-					<th>Contenue</th>
-					<th>Crée le
-					</th>
-					<th>possibilité</th>
-				</tr>
-			</thead>
-			<tbody>
-				{% for comment in comments %}
+		<section class=" bg-light py-5 px-5 rounded-3">
+			<table class="table table-dark table-hover py-5">
+				<thead>
 					<tr>
-						
-						<td>{{ comment.content }}</td>
-						<td>{{ comment.createdAt ? comment.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-						<td>
-							<button type="button" class="btn btn-outline-dark">
-								<a href="{{ path('app_admin_comment_show', {'id': comment.id}) }}">voir</a>
-							</button>
-
-							<button type="button" class="btn btn-outline-dark">
-								<a href="{{ path('app_admin_comment_edit', {'id': comment.id}) }}">modifier</a>
-							</button>
-
-
-						</td>
+						<th>Contenue</th>
+						<th>Crée le
+						</th>
+						<th>possibilité</th>
 					</tr>
-				{% else %}
-					<tr>
-						<td colspan="4">no records found</td>
-					</tr>
-				{% endfor %}
-			</tbody>
-		</table>
+				</thead>
+				<tbody>
+					{% for comment in comments %}
+						<tr>
 
+							<td>{{ comment.content }}</td>
+							<td>{{ comment.createdAt ? comment.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+							<td>
+								<button type="button" class="btn btn-outline-dark">
+									<a href="{{ path('app_admin_comment_show', {'id': comment.id}) }}">voir</a>
+								</button>
+
+								<button type="button" class="btn btn-outline-dark">
+									<a href="{{ path('app_admin_comment_edit', {'id': comment.id}) }}">modifier</a>
+								</button>
+
+
+							</td>
+						</tr>
+					{% else %}
+						<tr>
+							<td colspan="4">no records found</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</section>
 	</div>
 {% endblock %}

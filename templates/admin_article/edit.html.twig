@@ -1,26 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Article{% endblock %}
+{% block title %}Edit Article
+{% endblock %}
 
 {% block body %}
-   {# <div class="container">
-        <div class="card" style="width: 40rem;"> 
-            <h1 class="mt-5 mb-4 text-center">modifier l'article</h1>
-                {{ include('admin_article/_form.html.twig', {'button_label': 'Update'}) }}
+	{# <div class="container">
+	        <div class="card" style="width: 40rem;"> 
+	            <h1 class="mt-5 mb-4 text-center">modifier l'article</h1>
+	                {{ include('admin_article/_form.html.twig', {'button_label': 'Update'}) }}
+	
+	                <button type="button" class="btn btn-outline-dark">
+	                    <a href="{{ path('app_admin_article_index') }}">Retour a la liste d'article</a>
+	                </button>
+	                <div class="mt-3 mb-4">
+	                {{ include('admin_article/_delete_form.html.twig') }}
+	                </div> 
+	        </div>   
+	    </div>  #}
 
-                <button type="button" class="btn btn-outline-dark">
-                    <a href="{{ path('app_admin_article_index') }}">Retour a la liste d'article</a>
-                </button>
-                <div class="mt-3 mb-4">
-                {{ include('admin_article/_delete_form.html.twig') }}
-                </div> 
-        </div>   
-    </div>  #}
- 
- <div class="container ">
+	<div class="container ">
 		<div class="p-5 mb-4 bg-light d-flex justify-content-center rounded-3">
 			<div class="container-fluid py-5">
-				<h1 class="display-5 fw-bold">Les utilisateur
+				<h1 class="display-5 fw-bold mb-5">Mon espace
 				</h1>
 				<p class=" fs-4 ">Modifier l'article article un article doit avoir une personnalité quelque chose qui lui est propre une marque de fabrique.
 					<br>
@@ -34,17 +35,20 @@
 			</div>
 
 			<div class="card Regular shadow " style="width: 50rem;">
-				<h1 class="mt-5 mb-4 d-flex justify-content-center">Modifier un article</h1>
+				<h3 class="mt-5 mb-4 d-flex justify-content-center">Modifier un article</h3>
+
 
 				<div class="mx-4 ">
 					{{ include('admin_article/_form.html.twig', {'button_label': 'Update'}) }}
 				</div>
-                <div class="mx-4 ">
+				<div class="mx-4 py-3">
 					{{ include('admin_article/_delete_form.html.twig') }}
 				</div>
+
 
 			</div>
 		</div>
 	</div>
 
 {% endblock %}
+

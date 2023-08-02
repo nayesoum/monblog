@@ -4,50 +4,51 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Article</h1>
 
-	<div class="card mb-3" style="max-width: 540px;">
-		<div class="row g-0">
-			<div class="col-md-4">
-				<img src="{{ article.image }}" class="img-fluid rounded-start" alt="...">
+	<div class="container py-5">
+		<div class="p-5 mb-4 bg-light rounded-3">
+			<div class="container-fluid ">
+				<h1 class="text-center mt-5 mb-5">Ma partie admin voir le details de l'article
+					{{ article.title }}</h1>
 			</div>
-			<div class="col-md-8">
-				<div class="card-body">
-					<h5 class="card-title">{{ article.title }}</h5>
-					<p class="card-text">
-						Article n
-						{{ article.id }}</p>
-					<p class="card-text">
-						<small class="text-muted">{{ article.Content }}</small>
-					</p>
-					<p class="card-text">
-						<small class="text-muted">{{ article.Category }}</small>
-					</p>
+		</div>
+		<button type="button" class="btn btn-outline-dark mb-5">
+			<a href="{{ path('app_admin_article_index') }}">Retour à la liste d'article</a>
+		</button>
 
+		<section class="bg-light rounded-3 py-5 d-flex justify-content-center" style="width: 85rem;">
+
+			<div class="card mb-3 Regular shadow" style="width: 70rem;">
+				<div class="row g-0">
+					<div class="col-md-4">
+						<img src="{{ article.image }}" class="img-fluid rounded-start" alt="...">
+					</div>
+					<div class="col-md-6">
+						<div class="card-body">
+							<h2 class="card-title">{{ article.title }}</h2>
+							<p class="card-text">
+								Article n°
+								{{ article.id }}</p>
+							<p class="card-text">
+								<small class="text-dark">{{ article.Content }}</small>
+							</p>
+							<h5 class="card-text">
+								<small class="text-dark"> Catégorie :{{ article.Category }}</small>
+							</h5>
+							<div class="d-flex flex-row">
+
+								<a href="{{ path('app_admin_article_edit', {'id': article.id}) }}">
+									<i class="bi bi-pencil-fill"></i>
+								</a>
+
+							</div>
+							<div class="my-3">
+								{{ include('admin_article/_delete_form.html.twig') }}
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	</div>
-
-	<div class="card mb-3">
-		<img src="{{ article.image }}" class="card-img-top" alt="...">
-		<div class="card-body">
-			<h5 class="card-title">{{ article.title }}</h5>
-			<p class="card-text">
-				<small class="text-muted">{{ article.Category }}</small>
-			</p>
-			<p class="card-text">{{ article.Content }}</p>
-
-		</div>
-	</div>
-	
-  <button type="button" class="btn btn-outline-dark">
-    <a href="{{ path('app_admin_article_index') }}">Retour à la liste d'article</a>
-  </button>
-  <button type="button" class="btn btn-outline-dark">
-    <a href="{{ path('app_admin_article_edit', {'id': article.id}) }}">
-      <i class="bi bi-pencil-fill"></i>
-    </a>
-  </button>
-	{{ include('admin_article/_delete_form.html.twig') }}
 {% endblock %}

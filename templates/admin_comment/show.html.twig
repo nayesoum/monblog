@@ -6,33 +6,40 @@
 {% block body %}
 
 
-<div class="container ">
+	<div class="container ">
 
-		<div class="p-5 mb-4 bg-light rounded-3">
+		
+		<div class="p-5 mb-4 bg-light d-flex justify-content-center rounded-3">
 			<div class="container-fluid py-5">
-				<h1 class="display-5 fw-bold">Mes commentaires
+				<h1 class="display-5 fw-bold mb-5">Mon espace
 				</h1>
-				<p class="col-md-8 fs-4">Pour voir toutes les commentaires.</p>
+				<p class=" fs-4 ">je peux supprimer un commentaire mais chaque supression sera definitive .</p>
 
+			<div class="mx-4 py-3">
+					<button type="button" class="btn btn-outline-dark">
+						<a href="{{ path('app_admin_comment_index') }}">retour a la liste de commentaire</a>
+					</button>
+				</div>
+			</div>
+		<div class="card py-5">
+
+			<div class="card-body">
+
+				<p class="card-text my-2">
+					crée le :{{ comment.createdAt ? comment.createdAt|date('Y-m-d H:i:s') : '' }}</p>
+				<p class="card-text my-2">commentaire :{{ comment.content }}</p>
+
+				
+				{# <div class="mx-4 py-3">
+					<button type="button" class="btn btn-outline-dark">
+						<a href="{{ path('app_admin_comment_edit', {'id': comment.id}) }}">modifier</a>
+					</button>
+				</div> #}
+				<div class="mx-4 py-3">
+					{{ include('admin_comment/_delete_form.html.twig') }}
+				</div>
 			</div>
 		</div>
-	<div class="card" style="width: 18rem;">
-		
-		<div class="card-body">
-			
-			<p class="card-text"> crée le :{{ comment.createdAt ? comment.createdAt|date('Y-m-d H:i:s') : '' }}</p>
-			<p class="card-text">commentaire :{{ comment.content }}</p>
-			
-			
-	<button type="button" class="btn btn-outline-dark">
-		<a href="{{ path('app_admin_comment_index') }}">retour a la liste de commentaire</a>
-	</button>
-            <button type="button" class="btn btn-outline-dark">
-		<a href="{{ path('app_admin_comment_edit', {'id': comment.id}) }}">modifier</a>
-	</button>
-    	{{ include('admin_comment/_delete_form.html.twig') }}
-		</div>
-	</div>
 
-</div>    
+	</div>
 {% endblock %}

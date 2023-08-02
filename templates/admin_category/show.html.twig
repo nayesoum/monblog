@@ -6,24 +6,38 @@
 {% block body %}
 
 
+	<div class="container py-5">
+		<div class="p-5 mb-4 bg-light d-flex justify-content-center rounded-3">
+			<div class="container-fluid py-5">
+				<h1 class="display-5 fw-bold mb-5">Mon espace
+				</h1>
+				<p class=" fs-4 ">voir le detail d' une catégorie je peux la supprimer ou la modifier toutes supression sera definitive.</p>
 
-<div class="container">
-	<div class="card rounded" style="width: 20rem;">
-		<div class="card-body">
-			<h5 class="card-title">{{ category.name }}</h5>
-			<h6 class="card-subtitle mb-2 text-muted">l'id n° {{ category.id }}</h6>
-			
-			<button type="button" class="btn btn-outline-dark mb-2">
-		        <a href="{{ path('app_admin_category_index') }}">retour à la list</a>
-	        </button>
-			<button type="button" class="btn btn-outline-dark mb-2">
-		        <a href="{{ path('app_admin_category_edit', {'id': category.id}) }}">Modifier</a>
-	        </button>
-            
-                {{ include('admin_category/_delete_form.html.twig') }} 
-            
+				<div class="mx-4 ">
+					<button type="button" class="btn btn-outline-dark">
+						 <a href="{{ path('app_admin_category_index') }}">retour à la liste des categories</a>
+					</button>
+				</div>
+			</div>
+			<section class="bg-light rounded-3 py-5 d-flex justify-content-center" style="width: 85rem;">
+
+				<div class="card rounded Regular shadow" style="width: 20rem;">
+					<div class="card-body">
+						<h5 class="card-title">{{ category.name }}</h5>
+						<h6 class="card-subtitle mb-2 text-muted">l'id n°
+							{{ category.id }}</h6>
+
+						<div class="mx-4 py-3">
+							<button type="button" class="btn btn-outline-dark mb-2">
+								<a href="{{ path('app_admin_category_edit', {'id': category.id}) }}">Modifier</a>
+							</button>
+						</div>
+						<div class="mx-4 py-3">
+							{{ include('admin_category/_delete_form.html.twig') }}
+						</div>
+					</div>
+				</div>
+			</section>
 		</div>
 	</div>
-</div> 
- 
 {% endblock %}

@@ -22,3 +22,10 @@ a{
     text-decoration: none;
     list-style: none;
 }
+#couverture{
+    background-image: url('https://tse4.mm.bing.net/th?id=OIP.ORLWqHLCejo1BdVaBpPPxQHaFS&pid=Api&P=0&h=900');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 70rem;
+}
